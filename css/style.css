@@ -1,25 +1,8 @@
 
-/*general*/
-*{
-	font-family: Arial;
-	
-}
-body{
-	background: rgba(0,0,0,87);
-}
-
-/*container*/
-.container{
-
-	margin: 0 auto;
-	max-width: 960px;
-	background: lightgray;
-	padding: 5px 16px;
-}
 /*top*/
-.top{
-	position: relative;
-	margin: 40px 0;
+.first_nav a:hover{
+	background-color: #D945AF;
+
 }
 #title{
 	margin-left: 10px;
