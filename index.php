@@ -38,21 +38,18 @@ require_once getcwd()."/src/moduloDonuts.php";
 		  </div>
 	  </div>
 	</nav>
-	<div class="top"><!--abre top-->
-		<h1 id= "title">Titia Donuts</h1>
-		<a href="adiciona_produto.php" class="adicionar_produto">Adicionar Produto</a><!-- link para adicionar produto-->
+	<div class="container"><!--abre top-->
+		<h1 id= "display-4" style="color: #A43EE6">Produtos em destaque!!</h1>
 		</div><!--fecha top-->
-	<div class="container"><!--abre container -->
+	<div class="container mt-5 py-3" style="background-color: #F04167"><!--abre container -->
 			<?php
 			$images = scandir("src/imagens");
 			if ($produto = Donut::List_donuts()) {
 				//funcao para listagem dos produtos
-				?><div class="row"><?php
+				?><div class="row row-cols-1 row-cols-md-3 g-4"><?php
 				foreach ($produto as $pr) {//percorrer todos os produtos?>
-				<div class="col-sm-3"><!--area do produto-->
-					<div class="blur"></div><!--blur para efeito visual-->
-					<div class="content"><!--conteudo e background-->
-				    	<a class="link_edit"href="'edita_produto.php?varname=<?=$pr->id?>'">Editar</a>
+				<div class="col"><!--area do produto-->
+    				<div class="card p-2"> <!--conteudo e background-->
 						<?php
 						$imagem ="default.png";	//caso nao seja encontrada a imagem
 						foreach($images as $img){
@@ -60,16 +57,17 @@ require_once getcwd()."/src/moduloDonuts.php";
 				            	$imagem = $img;//captura da imagem respectiva do produto na pasta src/imagens
 				        	}
 				    	}?>
-			    		<img class="imagem" src='src/imagens/<?=$imagem?>'>
-						<h5 class="cat"><?=$pr->categoria?></h5>
-						<h4 class="name"><?=$pr->nome?></h4>
-						<?php /* 
-						if ($pr->preco_anterior!=null) {//caso haja algum preco anterior ?>
-							<h3 class="last_price">R$ <?=$pr->preco_anterior?></h3>
-						<?php } ?>*/ ?>
-						<h3 class="price">R$ <?=$pr->preco?></h3>
+			    		<img class="card-img-top" src='src/imagens/<?=$imagem?>'>
+			    		<div class="card-body">
+							<h5 class="cat">#<?=$pr->categoria?></h5>
+							<h4 class="name"><?=$pr->nome?></h4>
+							<?php /* 
+							if ($pr->preco_anterior!=null) {//caso haja algum preco anterior ?>
+								<h3 class="last_price">R$ <?=$pr->preco_anterior?></h3>
+							<?php } ?>*/ ?>
+							<h3 class="price">R$ <?=$pr->preco?></h3>
 						</div>
-		    		<div class="blur"></div>
+					</div>
 		    	</div>
 		    	<?php
 		    	}
@@ -81,5 +79,26 @@ require_once getcwd()."/src/moduloDonuts.php";
 
 			</div>
 	</div>
+	<footer id = "rodape" class="dark_purple pb-1 pt-5 mt-5 col-12">
+		<div class="row col-12">
+			<div class="col-sm-4 offset-1 text-light">
+				<h6>Email: email@gmail.com</h6>
+				<h6>Telefone: (51) 994169266</h6>
+				<h6>instagram: instagram</h6>
+			</div>
+			<div class=" col-11 col-sm-3 pt-2 pt-sm-0 offset-1 offset-sm-3 text-light">
+				<h6>Endereço x, rua x, n x, bairro x, Feliz- RS</h6>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='main.js'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
