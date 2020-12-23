@@ -65,7 +65,7 @@ require_once getcwd()."/src/moduloDonuts.php";
 							if ($pr->preco_anterior!=null) {//caso haja algum preco anterior ?>
 								<h3 class="last_price">R$ <?=$pr->preco_anterior?></h3>
 							<?php } ?>*/ ?>
-							<h3 class="price">R$ <?=$pr->preco?></h3>
+							<h3 class="price">R$ <?=$number_format($pr->preco, 2, ',')?></h3>
 						</div>
 					</div>
 		    	</div>

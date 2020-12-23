@@ -1,6 +1,5 @@
 <?php
-require_once getcwd()."/db/MySQL.class.php";
-
+require_once(__DIR__.'/../db/MySQL.class.php');
 class Donut{
     private $id;
     private $categoria;
