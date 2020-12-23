@@ -13,7 +13,7 @@ require_once getcwd()."/src/moduloDonuts.php";
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	  <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #F05879;">
+	  <nav class="navbar navbar-expand-sm navbar-light py-2 mb-5" style="background-color: #F05879;">
     	<div class="container-fluid">
 	  		<a href="#" class="navbar-brand offset-1 py-0">
 	  			<img src="donut_logo.jpeg" height="80">
@@ -39,14 +39,14 @@ require_once getcwd()."/src/moduloDonuts.php";
 	  </div>
 	</nav>
 	<div class="container"><!--abre top-->
-		<h1 id= "display-4" style="color: #A43EE6">Produtos em destaque!!</h1>
+		<h1 class="display-4 border-bottom border-danger" style="color: #A43EE6">Produtos em destaque!!</h1>
 		</div><!--fecha top-->
-	<div class="container mt-5 py-3" style="background-color: #F04167"><!--abre container -->
+	<div class="container mt-5 " ><!--abre container -->
 			<?php
 			$images = scandir("src/imagens");
 			if ($produto = Donut::List_donuts()) {
 				//funcao para listagem dos produtos
-				?><div class="row row-cols-1 row-cols-md-3 g-4"><?php
+				?><div class="row row-cols-1  pb-3 row-cols-md-3 g-4 col-10" style="background-color: #F04167"><?php
 				foreach ($produto as $pr) {//percorrer todos os produtos?>
 				<div class="col"><!--area do produto-->
     				<div class="card p-2"> <!--conteudo e background-->
