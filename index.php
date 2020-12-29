@@ -57,7 +57,7 @@ require_once getcwd()."/src/moduloDonuts.php";
 				            	$imagem = $img;//captura da imagem respectiva do produto na pasta src/imagens
 				        	}
 				    	}?>
-			    		<img class="card-img-top" src='src/imagens/<?=$imagem?>'>
+			    		<img class=" img-fluid img-thumbnail card-img-top product_area" src='src/imagens/<?=$imagem?>'>
 			    		<div class="card-body">
 							<h5 class="cat">#<?=$pr->categoria?></h5>
 							<h4 class="name"><?=$pr->nome?></h4>
@@ -65,7 +65,7 @@ require_once getcwd()."/src/moduloDonuts.php";
 							if ($pr->preco_anterior!=null) {//caso haja algum preco anterior ?>
 								<h3 class="last_price">R$ <?=$pr->preco_anterior?></h3>
 							<?php } ?>*/ ?>
-							<h3 class="price">R$ <?=$number_format($pr->preco, 2, ',')?></h3>
+							<h3 class="price">R$ <?=number_format($pr->preco, 2, ',','.')?></h3>
 						</div>
 					</div>
 		    	</div>

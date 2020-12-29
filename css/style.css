@@ -10,12 +10,7 @@ background: linear-gradient(0deg, rgba(169,143,176,1) 0%, rgba(237,223,230,1) 10
 
 /*products*/
 .product_area{
-	display: inline-block;
-	background-color: white;
-	width: 25%;
-	margin-right: 26px;
-	border-radius:8px;
-	margin-top:26px;
+	max-height: 200px;
 }
 /*top products */
 button{

@@ -43,11 +43,11 @@ class Donut{
         $dados = $conexao->consulta($sql);// executa no banco
         if ($dados) {
             $donut = new donut();//criacao de um objeto com base no retorno do banco
-            $donut->id = $dados[0]['id_donut']; 
+            $donut->id = $dados[0]['id']; 
             $donut->categoria = $dados[0]['categoria'];
             $donut->nome = $dados[0]['nome'];
             $donut->preco = $dados[0]['preco'];
-            $donut->preco_anterior = $dados[0]['preco_anterior'];
+            //$donut->preco_anterior = $dados[0]['preco_anterior'];
             $donut->foto = $dados[0]['foto'];
             return $donut;
         }
