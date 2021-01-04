@@ -6,7 +6,17 @@ require_once("../../src/moduloDonuts.php");
 
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+    #link{
+      background-color: #6fc7e3;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      margin: 10px;
+      padding: 6px 20px;
+      float: right;
+  }
+</style>
 
 <body>
     <div class="wrapper">
@@ -30,7 +40,6 @@ require_once("../../src/moduloDonuts.php");
                                             <th>ID</th>
                                             <th>Produto</th>
                                             <th>Preço</th>
-                                            <th>Vendas</th>
                                             <th>Categoria</th>
                                         </thead>
                                         <tbody>
@@ -41,18 +50,18 @@ require_once("../../src/moduloDonuts.php");
                                                         <td><?=$donut->id?></td>
                                                         <td><?=$donut->nome?></td>
                                                         <td>R$ <?=number_format($donut->preco, 2, ',',".")?></td>
-                                                        <td>0</td>
                                                         <td><?=$donut->categoria?></td>
                                                         <td><!--editar-->
                                                              <a href="editar-produto.php?varname=<?=$donut->id?>" style="margin-right: 8px"><i class="nc-icon nc-ruler-pencil"></i></a>
                                                             <!--remover-->
-                                                            <a href=""><i class="nc-icon nc-simple-remove"></i></a>
+                                                            <a href="../form/excluirRegistros.php?varname=<?=$donut->id?>&del=true"><i class="nc-icon nc-simple-remove"></i></a>
                                                         </td>
                                                     </tr>
                                         <?php   }
                                             } ?>
                                         </tbody>
                                     </table>
+                                    <a href="editar-produto.php?varname=s" id="link">Adicionar Donut</a>
                                 </div>
                             </div>
                         </div>

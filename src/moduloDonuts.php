@@ -32,8 +32,9 @@ class Donut{
     public function Edit($iddonut){//funcao de alteracao
         $conexao = new MySQL();//conexao com o banco
         
-        $sql = "UPDATE donut SET categoria = '".$this->categoria."', nome = '".$this->nome."', preco = ".$this->preco.", preco_anterior = ".$this->preco_anterior.", foto = '".$this->foto."'
-                WHERE id_donut = '".$iddonut."';";//string para o banco
+        $sql = "UPDATE donut SET categoria = '".$this->categoria."', nome = '".$this->nome."', preco = ".$this->preco.", foto = '".$this->foto."'
+                WHERE id = '".$iddonut."';";//string para o banco
+        echo $sql;
         $conexao->executa($sql);//executa no banco
     }
 
