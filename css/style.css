@@ -68,3 +68,13 @@ button{
 .dark_purple{
 	background-color: #a86c90;
 }
+
+ #link{
+      background-color: #6fc7e3;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      margin: 10px;
+      padding: 6px 20px;
+      float: right;
+  }

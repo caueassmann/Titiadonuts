@@ -1,7 +1,7 @@
 
  <?php
-include_once("../includes/header.php");
-require_once("../../src/moduloDonuts.php");
+include("includes/header.php");
+require_once("../src/moduloCategorias.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +20,8 @@ require_once("../../src/moduloDonuts.php");
 
 <body>
     <div class="wrapper">
-        <?php include_once("../includes/sidebar.php") ?>
+        <?php include("includes/sidebar.php") ?>
         <div class="main-panel">
-           <?php include_once("../includes/navbar.php") ?>
 
 
             <div class="content">
@@ -31,41 +30,35 @@ require_once("../../src/moduloDonuts.php");
                         <div class="col-md-12">
                             <div class="card card-plain table-plain-bg">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Donuts</h4>
+                                    <h4 class="card-title">Categorias</h4>
                                     <!--<p class="card-category">Here is a subtitle for this table</p>-->
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover">
                                         <thead>
                                             <th>ID</th>
-                                            <th>Produto</th>
-                                            <th>Preço</th>
-                                            <th>Categoria</th>
+                                            <th>Nome</th>
                                         </thead>
                                         <tbody>
                                             <?php 
-                                            if ($donuts = Donut::List_donuts()) {
-                                                foreach ($donuts as $donut) { ?>
+                                            if ($categorias = Categoria::List_categorias()) {
+                                                foreach ($categorias as $cat) { ?>
                                                     <tr>
-                                                        <td><?=$donut->id?></td>
-                                                        <td><?=$donut->nome?></td>
-                                                        <td>R$ <?=number_format($donut->preco, 2, ',',".")?></td>
-                                                        <td><?=$donut->categoria?></td>
-                                                        <td><!--editar-->
-                                                             <a href="editar-produto.php?varname=<?=$donut->id?>" style="margin-right: 8px"><i class="nc-icon nc-ruler-pencil"></i></a>
-                                                            <!--remover-->
-                                                            <a href="../form/excluirRegistros.php?varname=<?=$donut->id?>&del=true"><i class="nc-icon nc-simple-remove"></i></a>
+                                                        <td><?=$cat->id?></td>
+                                                        <td><?=$cat->nome?></td>
+                                                        <td><!--remover-->
+                                                            <a href="form/excluirRegistros.php?varname=<?=$cat->id?>&del=cat" style="margin-right: 8px"><i class="nc-icon nc-simple-remove"></i></a>
                                                         </td>
                                                     </tr>
                                         <?php   }
                                             } ?>
                                         </tbody>
                                     </table>
-                                    <a href="editar-produto.php?varname=s" id="link">Adicionar Donut</a>
+                                    <a href="editar-categoria.php" id="link">Adicionar Categoria</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           <?php include_once("../includes/fotter.php") ?>
+           <?php include_once("includes/fotter.php") ?>

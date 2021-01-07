@@ -3,12 +3,13 @@ require_once getcwd()."/src/moduloDonuts.php";
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Titia Donuts
-	</title>
+
+	<title>Titia Donuts</title>
 	<meta charset=utf-8>
 	<meta name=viewport content="width=device-width, initial-scale=1">
-	
+	 <link rel="icon" type="image/jpeg" href="donut_logo.jpeg">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -26,7 +27,7 @@ require_once getcwd()."/src/moduloDonuts.php";
 		  <div class="first_nav collapse navbar-collapse " id="nav_inicial">
 		    <ul class="navbar-nav ml-auto">
 		      <li class="nav-item">
-		        <a class="nav-link rounded-pill ml-1 mt-1 p-1 md-p-0"  style="display: inline;" href="#centro">Categorias</a>
+		        <a class="nav-link rounded-pill ml-1 mt-1 p-1 md-p-0" href="admin/index.php" style="display: inline;" href="#centro">Adicionar Produto</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link rounded-pill ml-1 mt-1 p-1 md-p-0" style="display: inline;" href="#rodape">Cadastro</a>
@@ -66,6 +67,7 @@ require_once getcwd()."/src/moduloDonuts.php";
 								<h3 class="last_price">R$ <?=$pr->preco_anterior?></h3>
 							<?php } ?>*/ ?>
 							<h3 class="price">R$ <?=number_format($pr->preco, 2, ',','.')?></h3>
+							<a id="link" href="http://api.whatsapp.com/send?1=pt_BR&phone=5551994169266" target="_blank">Combinar preço</a>
 						</div>
 					</div>
 		    	</div>
